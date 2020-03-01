@@ -13,8 +13,12 @@ It is possible to simply use get() from requests directly, but creating a Sessio
 
 ### Result
 assume with session if not mentioned
-- without io: 35.08285307884216 seconds / 34.32341909408569 seconds  (run 2 times)
-- io with print: 35.89998483657837 seconds
-- io with log: 48.693845987319946 seconds / 37.30951499938965 seconds
-- io without session: 72.58061599731445 seconds / 86.126944065094 seconds
 
+asynchronous:
+- without io: 35.08285307884216 seconds / 34.32341909408569 seconds  (run 2 times)
+- io without session: 72.58061599731445 seconds / 86.126944065094 seconds
+- io with print: 35.89998483657837 seconds / 33.560221910476685 seconds
+- io with log: 48.693845987319946 seconds / 37.30951499938965 seconds
+
+threading:
+- io with log: 8.03489899635315 seconds
