@@ -12,13 +12,14 @@ Using a Session object from requests can accelerate process!
 It is possible to simply use get() from requests directly, but creating a Session object allows requests to do some fancy networking tricks and really speed things up.
 
 ### How to run
-`python io_synchronous_no_io.py`
-`python io_synchronous_no_session.py`
-`python io_synchronous_print.py`
-`python io_synchronous.py`
-`python io_threading.py # uncomment last line first` 
-`python thread_optimize.py`
-
+```
+python io_synchronous_no_io.py
+python io_synchronous_no_session.py
+python io_synchronous_print.py
+python io_synchronous.py
+python io_threading.py # uncomment last line first
+python thread_optimize.py
+```
 
 
 ### Result
