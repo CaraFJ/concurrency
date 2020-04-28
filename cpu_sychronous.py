@@ -1,6 +1,7 @@
 import time
 from easyLogger import EasyLogger
 
+
 def cpu_bound(number):
     return sum(i * i for i in range(number))
 
@@ -18,4 +19,4 @@ if __name__ == "__main__":
     find_sums(numbers)
     duration = time.time() - start_time
     log.info("Duration {} seconds".format(duration))
-    #print(f"Duration {duration} seconds")
+    # print(f"Duration {duration} seconds")

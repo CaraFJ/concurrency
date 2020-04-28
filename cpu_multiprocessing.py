@@ -20,4 +20,4 @@ if __name__ == "__main__":
     find_sums(numbers)
     duration = time.time() - start_time
     log.info("Duration {} seconds".format(duration))
-    #print(f"Duration {duration} seconds")
+    # print(f"Duration {duration} seconds")
