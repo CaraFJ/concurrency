@@ -3,6 +3,8 @@
 ## example
 - example is based on example given in https://realpython.com/python-concurrency/ , made modifications to help better understanding.
 
+- `cpu_multiprocessing_process.py` is using multiprocessing.process instead of pool. This file only aims at showing how to apply process module.
+
 ### example background:
 for each url, download the contents from it and get the size.
 
