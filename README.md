@@ -5,6 +5,19 @@
 
 - `cpu_multiprocessing_process.py` is using multiprocessing.process instead of pool. This file only aims at showing how to apply process module.
 
+### how to select number of processes in multiprocessing?
+[a good answer](https://stackoverflow.com/questions/9355472/are-there-any-guidelines-to-follow-when-choosing-number-of-processes-with-multip)
+
+
+> If all of your threads/processes are indeed CPU-bound, you should run as many processes as the CPU reports cores. Due to HyperThreading, each physical CPU cores may be able to present multiple virtual cores. Call multiprocessing.cpu_count to get the number of virtual cores.
+
+> If only p of 1 of your threads is CPU-bound, you can adjust that number by multiplying by p. For example, if half your processes are CPU-bound (p = 0.5) and you have two CPUs with 4 cores each and 2x HyperThreading, you should start 0.5 * 2 * 4 * 2 = 8 processes.
+
+> If you have too many processes, the synchronization overhead will increase. If your program is little to none synchronization overhead, this won't impact the overall runtime, but may make other programs appear slower than they are unless you set your processes to a lower priority. Excessive numbers of processes (say, 10000) are fine in theory if your OS has a good scheduler. In practice, virtually any synchronization will make the overhead unbearable.
+
+#### how to find out if it is cpu-bound or IO-bound?
+> If you're not sure whether your application is CPU-bound and/or perfectly scaling, simply observe system load with different thread counts. You want the system load to be slightly under 100%, or the more precise uptime to be the number of virtual cores.
+
 ### example background:
 for each url, download the contents from it and get the size.
 
