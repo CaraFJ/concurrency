@@ -15,6 +15,8 @@
 
 > If you have too many processes, the synchronization overhead will increase. If your program is little to none synchronization overhead, this won't impact the overall runtime, but may make other programs appear slower than they are unless you set your processes to a lower priority. Excessive numbers of processes (say, 10000) are fine in theory if your OS has a good scheduler. In practice, virtually any synchronization will make the overhead unbearable.
 
+> If it's CPU-heavy, the number of cores is a sane starting point. If it's IO-heavy, mulitple processes won't help performance anyway. If it's mostly CPU with occasional IO (e.g. PNG optimisation), you can run a few processes more than the number of cores.
+
 #### how to find out if it is cpu-bound or IO-bound?
 > If you're not sure whether your application is CPU-bound and/or perfectly scaling, simply observe system load with different thread counts. You want the system load to be slightly under 100%, or the more precise uptime to be the number of virtual cores.
 
